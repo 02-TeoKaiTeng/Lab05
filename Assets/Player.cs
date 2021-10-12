@@ -9,6 +9,11 @@ public class Player : MonoBehaviour
 {
     public Text ScoreText;
     private float scoreValue;
+    public float totalcoins;
+    public Text Timetext;
+    private float TimerValue;
+    public float timeleft;
+    public int timeRemaining;
 
 
     // Start is called before the first frame update
@@ -20,7 +25,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timeleft -= Time.deltaTime;
+        timeRemaining = Mathf.FloorToInt(timeleft % 60);
+        Timetext.text = "Timer: " + timeRemaining.ToString();
+
+        if (scoreValue == totalcoins)
+        {
+            if (timeleft <= TimerValue)
+            {
+                SceneManager.LoadScene("GameWinScene");
+                GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
+            }
+        }
+        else if (timeleft <= 0)
+        {
+            SceneManager.LoadScene("GameLoseScene");
+            GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

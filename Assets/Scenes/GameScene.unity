@@ -2902,7 +2902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415395508}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -48.01, y: 1.48, z: 20.55}
+  m_LocalPosition: {x: -47.64, y: 1.48, z: 19.84}
   m_LocalScale: {x: 1, y: 0.06, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3627,6 +3627,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 789428181}
+  totalcoins: 60
+  Timetext: {fileID: 392200452}
+  timeleft: 30
+  timeRemaining: 0
 --- !u!1 &2014010564
 GameObject:
   m_ObjectHideFlags: 0
