@@ -34,14 +34,14 @@ public class Player : MonoBehaviour
             if (timeleft <= TimerValue)
             {
                 SceneManager.LoadScene("GameWinScene");
-                GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
             }
         }
         else if (timeleft <= 0)
         {
             SceneManager.LoadScene("GameLoseScene");
-            GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
         }
+
+        GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -54,8 +54,8 @@ public class Player : MonoBehaviour
         }
         if(other.gameObject.tag == "Water")
         {
-            SceneManager.LoadScene("GameLoseScene");
             GameObject.Find("FPSController").GetComponent<FirstPersonController>().m_MouseLook.m_cursorIsLocked = false;
+            SceneManager.LoadScene("GameLoseScene");
         }
     }
 }

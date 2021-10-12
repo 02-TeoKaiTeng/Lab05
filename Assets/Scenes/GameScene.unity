@@ -3630,7 +3630,7 @@ MonoBehaviour:
   ScoreText: {fileID: 789428181}
   totalcoins: 60
   Timetext: {fileID: 392200452}
-  timeleft: 30
+  timeleft: 20
   timeRemaining: 0
   Effects: {fileID: 2819647481508310770, guid: 5c5f1ab84c3ea454bb94862fb0a4897b, type: 3}
 --- !u!1 &2014010564
