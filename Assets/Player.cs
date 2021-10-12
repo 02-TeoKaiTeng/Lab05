@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private float TimerValue;
     public float timeleft;
     public int timeRemaining;
-
+    public GameObject Effects;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
             scoreValue += 10;
             ScoreText.text = "Score: " + scoreValue;
             Destroy(other.gameObject);
+            Destroy(Instantiate(Effects, other.transform.position, Quaternion.identity), 5);
         }
         if(other.gameObject.tag == "Water")
         {
